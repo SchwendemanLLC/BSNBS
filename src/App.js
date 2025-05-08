@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import * as faceapi from "face-api.js";
 import "./App.css";
 
 const MODEL_URL = process.env.PUBLIC_URL + "/models";
@@ -13,7 +12,7 @@ function App() {
   const inputRef = useRef();
 
   // Load face-api.js models on demand
-  const loadModels = async () => {
+  const loadModels = async (faceapi) => {
     try {
       await faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL);
       await faceapi.nets.ageGenderNet.loadFromUri(MODEL_URL);
@@ -35,7 +34,8 @@ function App() {
     setImageUrl(url);
     let timeoutId;
     try {
-      await loadModels();
+      const faceapi = await import("face-api.js");
+      await loadModels(faceapi);
       const img = new window.Image();
       img.src = url;
       img.onload = async () => {
