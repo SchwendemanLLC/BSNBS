@@ -34,7 +34,12 @@ function App() {
     setImageUrl(url);
     let timeoutId;
     try {
-      const faceapi = await import("face-api.js");
+      const faceapi = window.faceapi;
+      if (!faceapi) {
+        setLoading(false);
+        setError("face-api.js failed to load. Please check your internet connection and reload the page.");
+        return;
+      }
       await loadModels(faceapi);
       const img = new window.Image();
       img.src = url;
