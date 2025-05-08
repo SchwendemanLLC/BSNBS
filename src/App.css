@@ -1,0 +1,43 @@
+body {
+  background: #fffbe6;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 420px;
+  margin: 48px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #ff9800;
+  margin-bottom: 32px;
+}
+
+.file-input {
+  margin-bottom: 24px;
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 16px;
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 24px;
+  padding: 16px 0;
+  border-radius: 10px;
+}
+
+.preview img {
+  border: 2px solid #ffe0b2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
